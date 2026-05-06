@@ -3,11 +3,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/button"
+    <ToggleButton
+        android:id="@+id/toggleButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Show Toast"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true"
+        android:onClick="onToggleClick"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status"
+        android:textSize="20sp"
+        android:layout_above="@id/toggleButton"
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>
