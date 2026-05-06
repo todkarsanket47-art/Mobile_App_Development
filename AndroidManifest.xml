@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.radiobutton"
+    namespace = "com.example.seekbar"
     compileSdk {
         version = release(36) {
             minorApiLevel = 1
@@ -11,7 +11,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.radiobutton"
+        applicationId = "com.example.seekbar"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
