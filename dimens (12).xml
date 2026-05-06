@@ -1,16 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.popupmenu.MainActivity">
     <item
-        android:id="@+id/android"
-        android:title="Android" />
-
-    <item
-        android:id="@+id/java"
-        android:title="JAVA" />
-
-    <item
-        android:id="@+id/kotlin"
-        android:title="Kotlin" />
-
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
 </menu>

@@ -1,4 +1,4 @@
-package com.example.optionmenu;
+package com.example.popupmenu;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.optionmenu.databinding.FragmentFirstBinding;
+import com.example.popupmenu.databinding.FragmentFirstBinding;
 
 public class FirstFragment extends Fragment {
 

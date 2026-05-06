@@ -1,49 +1,44 @@
-package com.example.optionmenu;
+package com.example.radiobutton;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.graphics.Color;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.RelativeLayout;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
-public class MainActivity extends AppCompatActivity {
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
-    RelativeLayout currentLayout;
+import com.example.radiobutton.databinding.FragmentFirstBinding;
+
+public class FirstFragment extends Fragment {
+
+    private FragmentFirstBinding binding;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public View onCreateView(
+            @NonNull LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState
+    ) {
 
-        currentLayout = findViewById(R.id.a);
+        binding = FragmentFirstBinding.inflate(inflater, container, false);
+        return binding.getRoot();
+
+    }
+
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        binding.buttonFirst.setOnClickListener(v ->
+                NavHostFragment.findNavController(FirstFragment.this)
+                        .navigate(R.id.action_FirstFragment_to_SecondFragment)
+        );
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return true;
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        switch (item.getItemId()) {
-
-            case R.id.android:
-                currentLayout.setBackgroundColor(Color.RED);
-                return true;
-
-            case R.id.java:
-                currentLayout.setBackgroundColor(Color.GREEN);
-                return true;
-
-            case R.id.kotlin:
-                currentLayout.setBackgroundColor(Color.BLUE);
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
 }
