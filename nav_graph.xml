@@ -1,24 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
 
-    <!-- Background Image -->
-    <ImageView
-        android:id="@+id/imageView"
+    <EditText
+        android:id="@+id/txtTo"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/ic_launcher_background"
-        android:scaleType="centerCrop" />
+        android:layout_height="wrap_content"
+        android:hint="To" />
 
-    <!-- Text on top of Image -->
-    <TextView
-        android:id="@+id/textView"
+    <EditText
+        android:id="@+id/txtSubject"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="FrameLayout Demo"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:gravity="center" />
+        android:layout_height="wrap_content"
+        android:hint="Subject" />
 
-</FrameLayout>
+    <EditText
+        android:id="@+id/txtMessage"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="top"
+        android:hint="Message" />
+
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send"
+        android:layout_gravity="end" />
+
+</LinearLayout>
