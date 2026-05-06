@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.seekbar"
+    namespace = "com.example.toast"
     compileSdk {
         version = release(36) {
             minorApiLevel = 1
@@ -11,7 +11,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.seekbar"
+        applicationId = "com.example.toast"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
