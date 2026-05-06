@@ -1,44 +1,49 @@
-package com.example.linearlayout;
+package com.example.optionmenu;
 
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.graphics.Color;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.RelativeLayout;
 
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
+public class MainActivity extends AppCompatActivity {
 
-import com.example.linearlayout.databinding.FragmentFirstBinding;
-
-public class FirstFragment extends Fragment {
-
-    private FragmentFirstBinding binding;
+    RelativeLayout currentLayout;
 
     @Override
-    public View onCreateView(
-            @NonNull LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState
-    ) {
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        binding = FragmentFirstBinding.inflate(inflater, container, false);
-        return binding.getRoot();
-
-    }
-
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        binding.buttonFirst.setOnClickListener(v ->
-                NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment)
-        );
+        currentLayout = findViewById(R.id.a);
     }
 
     @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+
+            case R.id.android:
+                currentLayout.setBackgroundColor(Color.RED);
+                return true;
+
+            case R.id.java:
+                currentLayout.setBackgroundColor(Color.GREEN);
+                return true;
+
+            case R.id.kotlin:
+                currentLayout.setBackgroundColor(Color.BLUE);
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 }
